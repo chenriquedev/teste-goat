@@ -6,12 +6,15 @@ import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import { createVuetify } from 'vuetify'
 import { router } from './routes'
-
-const vuetify = createVuetify({ components, directives })
+import { createPinia } from 'pinia'
 
 const app = createApp(App);
+const vuetify = createVuetify({ components, directives })
+const pinia = createPinia()
+
 app.use(vuetify)
 app.use(router)
+app.use(pinia)
 app.mount('#app')
 
 export default app;
