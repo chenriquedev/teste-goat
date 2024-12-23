@@ -1,7 +1,12 @@
-import axios from "axios";
-
+import { AxiosResponse } from "axios";
+import { ILogin, IUserResponse } from "../model/IUser";
+import { get } from "./httpClient";
 
 export class Service {
+  static async usuarioLogin(dados: ILogin ): Promise<AxiosResponse<IUserResponse[]>>{
+    return get("/login", {usuario: dados.usuario, senha: dados.senha })
+  }
+
   static async getUsuarios() {
   }
 

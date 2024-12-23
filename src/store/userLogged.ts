@@ -1,20 +1,17 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import { Tipo } from "../model/EnumTipo";
+import { IUserLogged } from "../model/IUser";
 
-interface UserLogged {
-  usuario: string;
-  role: Tipo;
-}
+
 
 export const useUserStore = defineStore("userStore", () => {
-  let userLogged = ref({} as UserLogged | null);
+  let userLogged = ref({} as IUserLogged | null);
 
   function $reset() {
     userLogged.value = null;
   }
 
-  function setUser(user: UserLogged) {
+  function setUser(user: IUserLogged) {
     userLogged.value = user;
   }
 
