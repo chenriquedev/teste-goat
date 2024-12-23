@@ -3,7 +3,7 @@
 
 <template>
   <v-app>
-    <v-main>
+    <v-main class=" bg-grey-lighten-3">
       <v-container>
         <RouterView />
       </v-container>

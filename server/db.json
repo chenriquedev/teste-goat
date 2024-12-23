@@ -1,7 +1,39 @@
 {
-  "usuarios": [],
+  "usuarios": [
+    { "Nome": "Gustavo Gomes", "Matrícula": "79LN8BIP", "Idade": 38, "Cargo": "Designer", "Tipo de Usuário": 1 },
+    { "Nome": "Rafaela Martins", "Matrícula": "B666RL9A", "Idade": 50, "Cargo": "Arquiteto", "Tipo de Usuário": 2 },
+    { "Nome": "Ana Almeida", "Matrícula": "S2F5B0V0", "Idade": 19, "Cargo": "Designer", "Tipo de Usuário": 1 },
+    { "Nome": "Gustavo Rodrigues", "Matrícula": "27Q0F2SR", "Idade": 47, "Cargo": "Desenvolvedor", "Tipo de Usuário": 1 },
+    { "Nome": "Pedro Almeida", "Matrícula": "ITSDNVK1", "Idade": 27, "Cargo": "Gerente", "Tipo de Usuário": 2 },
+    { "Nome": "Lucas Gomes", "Matrícula": "YEGL9C6U", "Idade": 60, "Cargo": "Arquiteto", "Tipo de Usuário": 2 },
+    { "Nome": "Pedro Martins", "Matrícula": "LYD71Z0B", "Idade": 39, "Cargo": "Designer", "Tipo de Usuário": 1 },
+    { "Nome": "Rafaela Rodrigues", "Matrícula": "TCIH2XLF", "Idade": 39, "Cargo": "Analista", "Tipo de Usuário": 2 },
+    { "Nome": "Ana Souza", "Matrícula": "Y69SZAAB", "Idade": 29, "Cargo": "Gerente", "Tipo de Usuário": 2 },
+    { "Nome": "Lucas Martins", "Matrícula": "XJ4PWOEH", "Idade": 53, "Cargo": "Designer", "Tipo de Usuário": 1 },
+    { "Nome": "Carlos Lima", "Matrícula": "K9PP5QMP", "Idade": 27, "Cargo": "Arquiteto", "Tipo de Usuário": 1 },
+    { "Nome": "Pedro Rodrigues", "Matrícula": "3OIXA41Y", "Idade": 20, "Cargo": "Designer", "Tipo de Usuário": 1 },
+    { "Nome": "Pedro Lima", "Matrícula": "MB3HKKNA", "Idade": 25, "Cargo": "Desenvolvedor", "Tipo de Usuário": 1 },
+    { "Nome": "Maria Barbosa", "Matrícula": "BVSEQ10W", "Idade": 23, "Cargo": "Analista", "Tipo de Usuário": 2 },
+    { "Nome": "Laura Souza", "Matrícula": "40XAJIVW", "Idade": 59, "Cargo": "Gerente", "Tipo de Usuário": 2 },
+    { "Nome": "Lucas Lima", "Matrícula": "FRCLDSDO", "Idade": 53, "Cargo": "Gerente", "Tipo de Usuário": 1 },
+    { "Nome": "João Almeida", "Matrícula": "OOLLTVP0", "Idade": 30, "Cargo": "Desenvolvedor", "Tipo de Usuário": 1 },
+    { "Nome": "Carlos Barbosa", "Matrícula": "0FGORXJ6", "Idade": 50, "Cargo": "Desenvolvedor", "Tipo de Usuário": 2 },
+    { "Nome": "Laura Rodrigues", "Matrícula": "S3UYF7NZ", "Idade": 45, "Cargo": "Desenvolvedor", "Tipo de Usuário": 1 },
+    { "Nome": "Maria Rodrigues", "Matrícula": "7W02LFYV", "Idade": 34, "Cargo": "Desenvolvedor", "Tipo de Usuário": 1 }
+  ]
+  ,
   "login": [
-    { "id": 1, "usuario": "admin", "senha": "1234", "tipo": 1 },
-    { "id": 2, "usuario": "comum", "senha": "5678", "tipo": 2 }
+    {
+      "id": "1",
+      "usuario": "admin",
+      "senha": "1234",
+      "tipo": 1
+    },
+    {
+      "id": "2",
+      "usuario": "comum",
+      "senha": "5678",
+      "tipo": 2
+    }
   ]
 }
