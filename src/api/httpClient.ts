@@ -15,7 +15,7 @@ const post = <T>(
   body: object,
   params?: object,
   baseURL?: string,
-): Promise<AxiosResponse<T>| void> => {
+): Promise<AxiosResponse<T | void>> => {
   return api(baseURL).post<T>(url, body, {params});
 }
 
@@ -24,7 +24,7 @@ const put = <T>(
   body: object,
   params?: object,
   baseURL?: string,
-): Promise<AxiosResponse<T>| void> => {
+): Promise<AxiosResponse<T | void>> => {
   return api(baseURL).put<T>(url, body, {params});
 }
 

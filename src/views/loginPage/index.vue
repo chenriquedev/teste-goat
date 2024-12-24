@@ -9,8 +9,10 @@
 
             <v-text-field v-model="login.senha" type="password" label="Password"
               :rules="[loginRules.passwordRequired]"></v-text-field>
-
-            <v-btn class="mt-2" type="submit" block :loading="loading" color="success" variant="elevated">Submit</v-btn>
+            <v-card-actions>
+              <v-btn class="mt-2" type="submit" block :loading="loading" color="green-darken-2"
+                variant="elevated">Submit</v-btn>
+            </v-card-actions>
           </v-form>
         </v-sheet>
       </v-card-text>
@@ -18,7 +20,7 @@
   </section>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { Ref, ref } from 'vue';
 import { ILogin, IUserLogged, IUserResponse } from '../../model/IUser';
 import { Service } from '../../api/Service';
 import { useUserStore } from '../../store/userLogged';
@@ -27,8 +29,8 @@ import { useRouter } from 'vue-router';
 const userStore = useUserStore()
 const router = useRouter()
 const loginForm = ref()
-const login = ref({} as ILogin)
-const loading = ref(false)
+const login: Ref<ILogin> = ref({} as ILogin)
+const loading: Ref<boolean> = ref(false)
 const loginRules = {
   userRequired: (value: string) => !!value || 'Field is required',
   passwordRequired: (value: string) => !!value || 'Field is required'
