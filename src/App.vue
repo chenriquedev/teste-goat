@@ -26,7 +26,7 @@ function back(): void {
         {{ userStore.userLogged?.usuario }}
       </v-app-bar-title>
       <template v-slot:append>
-        <v-btn class="mr-3"
+        <v-btn class="mr-3 "
           v-if="userStore.userLogged?.tipo === Tipo.ADMIN && router.currentRoute.value.path !== '/register'"
           @click="register">
           <v-icon size="large" class="mr-3" icon="mdi-account-plus-outline" start></v-icon>

@@ -1,0 +1,23 @@
+.form {
+  @media (max-width: 530px) {
+    width: 75%;
+  }
+
+  @media (max-width: 424px) {
+    width: 60%;
+  }
+}
+
+.registerSheet{
+  @media (max-width: 760px) {
+    width: 600px !important;
+  }
+
+  @media (max-width: 650px) {
+    width: 500px !important;
+  }
+
+  @media (max-width: 550px) {
+    width: 400px !important;
+  }
+}

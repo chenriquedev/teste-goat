@@ -1,4 +1,8 @@
 <template>
+
+  <v-text-field v-model="search" @update:modelValue="changeSearch" append-inner-icon="mdi-magnify" density="comfortable" label="Search" variant="solo" hide-details
+   class="mb-10"></v-text-field>
+
   <v-table>
     <thead>
       <tr>
@@ -85,14 +89,13 @@ import { Service } from '../../api/Service';
 import { useUserStore } from '../../store/userLogged';
 import { IUsuario } from '../../model/IUser';
 import { Tipo } from '../../model/Enums';
-import { Usuario } from '../../model/User';
 import { cargos, tipos } from '../../utils/lists';
-import { useRouter } from 'vue-router';
+import { usuarioFactory } from '../../utils/usuarioFactory';
 
 
 const userStore = useUserStore()
-const router = useRouter()
 const editForm = ref()
+const search: Ref<string> = ref("")
 const users: Ref<IUsuario[]> = ref([] as IUsuario[])
 const selectedUser: Ref<IUsuario> = ref({} as IUsuario)
 const deletDialog: Ref<boolean> = ref(false)
@@ -126,16 +129,15 @@ async function editUser(): Promise<void> {
   if (!validate) {
     return
   }
-  const updateUsuario = new Usuario()
-  updateUsuario.setNome(selectedUser.value.nome)
-  updateUsuario.setCargo(selectedUser.value.cargo)
-  updateUsuario.setMatricula(selectedUser.value.matricula)
-  updateUsuario.setIdade(selectedUser.value.idade)
-  updateUsuario.setTipo(selectedUser.value.tipo)
+  const updateUsuario = usuarioFactory(selectedUser.value)
 
   await Service.updateUsuario(selectedUser.value.id, updateUsuario)
   await getUsers(1)
   toogleDialog("edit")
+}
+
+async function changeSearch() {
+  const { data } = await Service.findUsuarioBy(search.value)
 }
 
 function isAdmin(): boolean {
@@ -163,23 +165,8 @@ async function changePage(event: number): Promise<void> {
   await getUsers(event)
 }
 
-function register() {
-  router.push({name: "register"})
-}
-
 onMounted(() => {
   getUsers(actualPage.value)
 })
 
 </script>
-<style>
-.form {
-  @media (max-width: 530px) {
-    width: 75%;
-  }
-
-  @media (max-width: 424px) {
-    width: 60%;
-  }
-}
-</style>
