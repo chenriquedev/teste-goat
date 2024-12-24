@@ -7,7 +7,7 @@ const get = <T>(
   baseURL?: string,
   token?: string
 ): Promise<AxiosResponse<T>> =>  {
-  return api(baseURL, token).get<T>(url, params);
+  return api(baseURL, token).get<T>(url, {params});
 };
 
 const post = <T>(
@@ -15,8 +15,8 @@ const post = <T>(
   body: object,
   params?: object,
   baseURL?: string,
-): Promise<AxiosResponse<T>| void> => {
-  return api(baseURL).post<T>(url, body, params);
+): Promise<AxiosResponse<T | void>> => {
+  return api(baseURL).post<T>(url, body, {params});
 }
 
 const put = <T>(
@@ -24,8 +24,8 @@ const put = <T>(
   body: object,
   params?: object,
   baseURL?: string,
-): Promise<AxiosResponse<T>| void> => {
-  return api(baseURL).put<T>(url, body, params);
+): Promise<AxiosResponse<T | void>> => {
+  return api(baseURL).put<T>(url, body, {params});
 }
 
 const deleteR = <T>(
