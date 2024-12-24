@@ -1,12 +1,12 @@
-import { Tipo } from "./EnumTipo";
+import { Cargo, Tipo } from "./Enums";
 
 export class Usuario {
     constructor(
-    private nome: string,
-    private matricula: string,
-    private idade: number,
-    private cargo: string,
-    private tipo: Tipo
+    private nome: string = '',
+    private matricula: string = '',
+    private idade: number = 0,
+    private cargo: Cargo = Cargo.DesenvolvedorFrontend,
+    private tipo: Tipo = Tipo.COMUM
     ){}
 
     public getNome(): string{
@@ -34,7 +34,7 @@ export class Usuario {
     public getCargo(): string {
         return this.cargo
     }
-    public setCargo(cargo: string): void{
+    public setCargo(cargo: Cargo): void{
         this.cargo = cargo
     }
     public getTipo(): Tipo{
